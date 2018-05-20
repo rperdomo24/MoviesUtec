@@ -1,6 +1,5 @@
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,6 +81,9 @@ function enviar(){
   var mailu = $("#userName").val();
   var passu = $("#userPassword").val() ;
    if(!$.isEmptyObject(mailu) && !$.isEmptyObject(passu)){
+     if(ValidarCorreo(mailu))
+     {
+
      $.ajax({
      method: "GET",
      url: "../Database/Login.php",
@@ -119,9 +121,17 @@ function enviar(){
        alertify.error('Error con la base de datos');
     alert( "error: " + msg );
     });
+     }else{
+      alertify.error('Correo Invalido. ejemplo: Jperez@gmail.com');
+     }
   }else{
     alertify.error('por favor llena contraseña y password');
   }
+}
+function ValidarCorreo(email)
+{
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 }
 
 </script>
