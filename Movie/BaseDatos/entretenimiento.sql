@@ -44,7 +44,7 @@ SET time_zone = '+00:00';
 --  `clasificacion` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
 --  `UrlPelicula` varchar(2000) COLLATE utf8_spanish_ci NOT NULL,
 --  `UrlTrailer` int(11) NOT NULL
---) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+-- ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
