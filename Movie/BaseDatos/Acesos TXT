@@ -1,0 +1,7 @@
+Accesos a la base de datos
+usename: MoviesUtec
+Password:abc123..
+NombreBase: mysqldatabase29190
+SERVER: moviesutec-mysqldbserver
+
+$con=mysqli_init(); mysqli_ssl_set($con, NULL, NULL, {ca-cert filename}, NULL, NULL); mysqli_real_connect($con, "{host_name}", "{your_username}", {your_password}, {your_database}, 3306);
