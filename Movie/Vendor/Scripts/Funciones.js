@@ -12,11 +12,13 @@ $('div.tile').on('click', function(){
 function EvaluarTiempoVideo(){
     var vid = document.getElementById("idPelicula");
     if(vid){
-        var PorcentajeVer = 20;
-        var MaximoSegundosVer = vid.duration * (PorcentajeVer / 100);
+        var PorcentajeVer = 1;
+        var MaximoSegundosVer = vid.duration * (PorcentajeVer / 100);console.log("Pausa 1");
         vid.ontimeupdate = function() {
+            console.log("Pausa 2");
             if(vid.currentTime > MaximoSegundosVer){
                 vid.pause();
+                console.log("Pausa 3");
                 $("img#PagaPro").show();
                 $("div#cntPelicula").empty();
             }

@@ -392,7 +392,7 @@ VALUES('Jurasic Park',
 'Chris Pratt, Jeff Goldblum, Bryce Dallas Howard, B. D. Wong, Toby Jones, Rafe Spall, Justice Smith...',
 4,
 'http://allcalidad.com/wp-content/uploads/2018/02/14134132.jpg',
-'../../Peliculas/Titanic-1997.mp4'
+'../../Peliculas/Jurasic-Park-2.mp4'
 );
 
 CREATE TABLE Trailers
@@ -401,3 +401,6 @@ CREATE TABLE Trailers
   FKPelicula int not null REFERENCES Peliculas(IdPelicula),
   UrlTriller varchar(1000)
 );
+
+insert into Trailers(FKPelicula, UrlTriller)
+values (1, '../../Peliculas/Triller-Titanic-1997.mp4')

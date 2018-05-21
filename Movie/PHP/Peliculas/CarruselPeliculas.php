@@ -1,21 +1,35 @@
 <?php
-    
+
+    $_EsPaga = $_SESSION['Cuenta'];
+    $html = "";
+
+    $QueryGeneroPelicula = "";
+    if($_EsPaga > 0){
     $QueryGeneroPelicula = "SELECT IdGeneroPelicula, ".
                             "Nombre, " .
                             "Descripcion " .
                             "FROM GeneroPelicula " .
                             "WHERE EXISTS (SELECT * FROM Peliculas WHERE FKGenero = IdGeneroPelicula) " .
                             "ORDER BY Nombre ASC;";
+    }else{
+    $QueryGeneroPelicula = "SELECT IdGeneroPelicula, ".
+                        "Nombre, " .
+                        "Descripcion " .
+                        "FROM GeneroPelicula " .
+                        "WHERE EXISTS (SELECT * FROM Peliculas WHERE FKGenero = IdGeneroPelicula " .
+                        "AND EXISTS (SELECT * FROM Trailers WHERE FKPelicula = IdPelicula)) " .
+                        "ORDER BY Nombre ASC;";
+    }
 
     $TodosGeneros = getRawSQLResultSet($connect, $QueryGeneroPelicula);
-
-    $html = "";
 
     while($Genero = mysqli_fetch_row($TodosGeneros)) {
     $html .= '<div class="row">';
     $html .= '<h1>' . $Genero[1] . '</h1>';
     $html .= '<div class="row__inner">';
+    $QueryPeliculasPorGenero = "";
 
+    if($_EsPaga > 0){
     $QueryPeliculasPorGenero = 
         "SELECT IdPelicula, " .
         "Titulo, " .
@@ -38,7 +52,32 @@
         "INNER JOIN clasificacionpelicula AS cl on cl.IdClasificacionPelicula = pe.FKClasificacion " .
         "WHERE gp.IdGeneroPelicula = " . $Genero[0] .
         " ORDER BY pe.Anio DESC LIMIT 20;";
-    
+    } else {
+        $QueryPeliculasPorGenero = 
+        "SELECT IdPelicula, " .
+        "Titulo, " .
+        "Sinopsis, " .
+        "UrlPaginaOficial, " .
+        "gp.Nombre AS Genero, " .
+        "gp.Descripcion AS GeneroDescripcion, " .
+        "na.Nombre AS Nacionalidad, " .
+        "DuracionMinutos, " .
+        "Anio, " .
+        "Directores, " .
+        "Actores, " .
+        "cl.Nombre AS Clasificacion, " .
+        "cl.Descripcion AS ClasificacionDescripcion, " .
+        "UrlImgPortada, " .
+        "UrlPelicula " .
+        "FROM peliculas AS pe " .
+        "INNER JOIN generopelicula AS gp on gp.IdGeneroPelicula = pe.FKGenero " .
+        "INNER JOIN nacionalidades AS na on na.IdNacionalidad = pe.FKNacionalidad " .
+        "INNER JOIN clasificacionpelicula AS cl on cl.IdClasificacionPelicula = pe.FKClasificacion " .
+        "INNER JOIN trailers AS tr on tr.FKPelicula = pe.IdPelicula " .
+        "WHERE gp.IdGeneroPelicula = " . $Genero[0] .
+        " ORDER BY pe.Anio DESC LIMIT 20;";
+    }
+
     $PeliculasPorGenero = getRawSQLResultSet($connect, $QueryPeliculasPorGenero);
 
     while($Pelicula = mysqli_fetch_row($PeliculasPorGenero)) {

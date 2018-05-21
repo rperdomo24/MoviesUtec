@@ -1,9 +1,9 @@
 
 <?php 
-	if(!isset($_SESSION['Usuario'])) {
-		header("Location: ..\Registro\Login.php");
-	}
-	else {
+    if(!isset($_SESSION['Usuario'])) {
+      header("Location: ..\Registro\Login.php");
+    }
+    else {
         $nom = $_SESSION['Usuario'];
     }
 
@@ -14,7 +14,7 @@
     }
 
     function EsActivo($Pagina){
-      $PathAbs = '/MoviesUtec/Movie/PHP';
+      $PathAbs = '/MoviesUtec/Movie/PHP/';
       $MenuActual = $_SERVER['REQUEST_URI'];
       if(($PathAbs . $Pagina) == $MenuActual){
         echo "active";
@@ -39,6 +39,7 @@
     }else{
       $PripalPorCliente = "ClientesPaga";
     }
+    
 ?>
 
 <div class="navbar-wrapper">

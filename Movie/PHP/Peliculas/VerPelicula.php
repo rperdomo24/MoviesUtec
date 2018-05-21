@@ -25,12 +25,14 @@ SESSION_START();
                     "cl.Nombre AS Clasificacion, " .
                     "cl.Descripcion AS ClasificacionDescripcion, " .
                     "UrlImgPortada, " .
-                    "UrlPelicula " .
+                    "UrlPelicula, " .
+                    "tr.UrlTriller " .
                     "FROM peliculas AS pe " .
+                    "LEFT JOIN Trailers AS tr on tr.FKPelicula = pe.IdPelicula " .
                     "INNER JOIN generopelicula AS gp on gp.IdGeneroPelicula = pe.FKGenero " .
                     "INNER JOIN nacionalidades AS na on na.IdNacionalidad = pe.FKNacionalidad " .
                     "INNER JOIN clasificacionpelicula AS cl on cl.IdClasificacionPelicula = pe.FKClasificacion " .
-                    "WHERE pe.IdPelicula=" . $PeliculaId . ";";
+                    "WHERE pe.IdPelicula=" . $PeliculaId . ";";                    
 
     $NombrePelicula = getRawSQLResultSet($connect, "SELECT Titulo FROM Peliculas WHERE IdPelicula=" . $PeliculaId . ";");
   
@@ -70,14 +72,24 @@ SESSION_START();
             echo '';
             echo '';
 
-            if($EsPro == 0){
-                echo '<center><a href="#">Hazte PRO para ver la pelicula completa!</a></center>';
-                echo '<center><img id="PagaPro" src="../../IMG/Paga.jpg" /></center>';
+            if(!is_null($Pelicula[15])){
+                echo '<center>TRAILER</center>';
+                echo '<center><video id="idTrilerPelicula" width="80%" controls>';
+                echo '<source src="' . $Pelicula[15] . '" type="video/mp4" >';
+                echo '</video></center>';
+                if($EsPro < 1){
+                    echo '<center><a href="#">Hazte PRO para ver la pelicula completa!</a></center>';
+                    echo '<center><img id="PagaPro" src="../../IMG/Paga.jpg" /></center>';
+                }
+                echo '<br>';
             }
-            
-            echo '<center><div id="cntPelicula"><video id="idPelicula" width="80%" controls>';
+            echo '<br>';
+            echo '<br>';
+            if($EsPro > 0){
+                echo '<center><div id="cntPelicula"><video id="idPelicula" width="80%" controls>';
                 echo '<source src="' . $Pelicula[14] . '" type="video/mp4" >';
-            echo '</video></div></center>';
+                echo '</video></div></center>';
+            }
         }
 
         ?>
@@ -99,11 +111,13 @@ SESSION_START();
 <script src="..\..\Vendor\Scripts\Funciones.js"></script>
 <script>
     $(function(){
+        $("img#PagaPro").hide();
+        /*
         var EsPro = <?php echo $EsPro; ?>;
         if(EsPro == 0){
             $("img#PagaPro").hide();
             EvaluarTiempoVideo();
-        }
+        }*/
     });
 
 </script>
