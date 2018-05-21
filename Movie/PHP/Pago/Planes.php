@@ -1,3 +1,37 @@
+<?php 
+include ("../Database/conexion.php");
+SESSION_START();
+
+    if(!isset($_SESSION['Usuario'])) {
+        header("Location: ..\Registro\Login.php");
+    } else {
+        $nom = $_SESSION['Usuario'];
+    }
+
+      $QueryPlanes =  "Select 
+      idCatalogoPlanes,
+      NoMesPlan,
+      PrecioPlan,
+      FechaCompraPlan,
+      ComentarioPlan,
+      TipoPago
+      from catalogoplanes";
+
+    function getSQLResultSet($connect, $Query){
+        $mysqli=$connect;
+		if ($mysqli->connect_errno) {
+		  printf("Connect failed: %s\n", $mysqli->connect_error);
+		  printf("Error: %s\n", $mysqli->connect_errno);
+		  exit();
+		} else {
+		  return $mysqli->query($Query);
+		}
+		$mysqli->close();
+	}
+
+
+?>
+
 <html lang="en">
 <head>
 
@@ -38,75 +72,39 @@
         </nav>
       </div>
     </div>
-
-
-
     <div class="col-lg-12" style="margin-top:100px">       
 <div class="container">
     <div class="row">
   <div class="text-center">
     <h2>Nuestros Planes</h2>
+    <h3>Lo mejor para ti! <?php echo $nom;?>!</h>
     <h4>Se premium por los meses que tu desees</h4>
+    
   </div>
   <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>1 Mes</h1>
-        </div>
-        <div class="panel-body">
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todas los Trailer</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todas las Peliculas</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todos los Generos Musicales desbloqueados</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todos tus artistas en un solo lugar</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Descarga a tu equipo lo que quieras, cuando quieras</p>
-        </div>
-        <div class="panel-footer">
-            <h3>$6.99 USD </h3>
-            <h4>Unico Pago</h4>
-          <button class="btn btn-lg btn-primary">Hazte Premium!</button>
-        </div>
-      </div> 
-    </div> 
-    <div class="col-sm-4">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>3 Meses</h1>
-        </div>
-        <div class="panel-body">
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todas los Trailer</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todas las Peliculas</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todos los Generos Musicales desbloqueados</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todos tus artistas en un solo lugar</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Descarga a tu equipo lo que quieras, cuando quieras</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$10.99 USD</h3>
-          <h4>Unico Pago</h4>
-          <button class="btn btn-lg btn-success">Hazte Premium!</button>
-        </div>
-      </div> 
-    </div> 
-   <div class="col-sm-4">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>12 Meses</h1>
-        </div>
-        <div class="panel-body">
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todas los Trailer</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todas las Peliculas</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todos los Generos Musicales desbloqueados</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Todos tus artistas en un solo lugar</p>
-        <p><strong><i class="glyphicon glyphicon-ok"></i></strong> Descarga a tu equipo lo que quieras, cuando quieras</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$16.99 USD</h3>
-          <h4>Unico Pago</h4>
-          <button class="btn btn-lg btn-warning">Hazte Premium!</button>
-        </div>
-      </div> 
-    </div> 
-  </div>
+  <div class="col-lg-12">
+  <?php
+        $_Planes = getSQLResultSet($connect, $QueryPlanes);
+        while($Planes = mysqli_fetch_row($_Planes))
+        {    
+            echo '<div class="col-sm-6">';
+            echo '<input type="hidden" value="'.$Planes[0].'"/>';
+            echo '<div class="panel panel-default text-center">';
+            echo  '<div class="panel-heading">';
+            echo '<h1> <strong><i class="glyphicon glyphicon glyphicon-user"></i></strong> '.$Planes[1].'</h1>';
+            echo '</div>';
+            echo '<div class="panel-body">';
+            echo '<h3><p><small>' . $Planes[4].'</small></p></h3>';
+            echo '</div>';
+            echo '<div class="panel-footer">';
+            echo '<h3> $'. $Planes[2].'</h3>';
+            echo '<h4>'. $Planes[5].' Mensual <h4>';
+            echo '<button class="btn btn-lg btn-success">Hazte Premium!</button>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+       }
+        ?>
 </div>
 
 </div>
