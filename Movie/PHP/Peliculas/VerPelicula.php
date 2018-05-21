@@ -77,7 +77,7 @@ SESSION_START();
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Inicio</a></li>
+            <li><a href="../ClientesGratis/Principal.php">Inicio</a></li>
             <li><a href="#">Haste Pro!</a></li>
             <li><a href="..\..\PHP\Registro\Login.php">Cerrar Sesion</a></li>
             <li><h4><b>Hola <?php echo $nom;?>!<b> ¿Qué deseas ver hoy?</h4></li>
@@ -105,7 +105,11 @@ SESSION_START();
             echo '</div>';
             echo '';
             echo '';
-            echo '<center><video width="80%" src="' . $Pelicula[14] . '" controls></video></center>';
+            echo '<center><a href="#">Hazte PRO para ver la pelicula completa!</a></center>';
+            echo '<center><img id="PagaPro" src="../../IMG/Paga.jpg" /></center>';
+            echo '<center><div id="cntPelicula"><video id="idPelicula" width="80%" controls>';
+                echo '<source src="' . $Pelicula[14] . '" type="video/mp4" >';
+            echo '</video></div></center>';
         }
 
         ?>
@@ -125,5 +129,17 @@ SESSION_START();
 <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
 <script src="..\..\Vendor\alertify\alertify.min.js"></script>
 <script src="..\..\Vendor\Scripts\Funciones.js"></script>
+<script>
+    $(function(){
+        $("img#PagaPro").hide();
+        var Pro = false;
+        if(Pro){
+            // ...
+        } else {
+            EvaluarTiempoVideo();
+        }
+    });
+
+</script>
 </body>
 </html>

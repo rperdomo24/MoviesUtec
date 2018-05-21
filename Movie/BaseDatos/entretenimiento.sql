@@ -392,7 +392,7 @@ VALUES('Titanic',
 'Chris Pratt, Jeff Goldblum, Bryce Dallas Howard, B. D. Wong, Toby Jones, Rafe Spall, Justice Smith...',
 4,
 'http://allcalidad.com/wp-content/uploads/2018/02/14134132.jpg',
-'blob:http://jurassicpark.wikia.com/78aba80c-1ed7-4eec-9630-a79fa667ec75'
+'../../Peliculas/Titanic-1997.mp4'
 );
 
 CREATE TABLE Trailers
