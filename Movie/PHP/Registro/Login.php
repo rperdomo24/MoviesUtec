@@ -94,22 +94,20 @@ function enviar(){
      .done(function( msg ) {
        data= JSON.parse(msg);
        if(!$.isEmptyObject(data)){
-         if(data.respuestas[0].Cuenta == 0){
-            $.post("Sesiones.php",
-             {"IdUsuario": data.respuestas[0].IdUsuario,
-             "Usuario": data.respuestas[0].Usuario,
-             "CorreoElectronico": data.respuestas[0].CorreoElectronico	,
-             "Nombres": data.respuestas[0].	Nombres,
-             "Apellidos": data.respuestas[0].Apellidos,
-             "Cuenta": data.respuestas[0].Cuenta
-           }
-           );
-           alertify.success('Bienvenido en estos momentos sera redireccionado, usuario gratuito');
-              window.location.href = "../ClientesGratis/Principal.php";
+          $.post("Sesiones.php",
+              {"IdUsuario": data.respuestas[0].IdUsuario,
+              "Usuario": data.respuestas[0].Usuario,
+              "CorreoElectronico": data.respuestas[0].CorreoElectronico	,
+              "Nombres": data.respuestas[0].	Nombres,
+              "Apellidos": data.respuestas[0].Apellidos,
+              "Cuenta": data.respuestas[0].Cuenta
+            });
 
-         }else if (data.respuestas[0].Cuenta == 1){
+         if(data.respuestas[0].Cuenta < 1){
+            alertify.success('Bienvenido en estos momentos sera redireccionado, usuario gratuito');
+            window.location.href = "../ClientesGratis/Principal.php";
+         } else {
             alertify.success('Bienvenido en estos momentos sera redireccionado, usuario Paga');
-
             window.location.href = "../ClientesPaga/Principal.php";
          }
        }
