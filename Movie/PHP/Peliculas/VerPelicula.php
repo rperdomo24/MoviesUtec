@@ -94,18 +94,18 @@ SESSION_START();
         while($Pelicula = mysqli_fetch_row($_Pelicula))
         {    
             echo '<div>';
-            echo '<img src="' . $Pelicula[13] . '" title="" alt="img" />';
+            echo '<img width="248px" height="375px" src="' . $Pelicula[13] . '" title="" alt="img" />';
             echo '<p><b>' . $Pelicula[1] . ' - ' . $Pelicula[7] . 'min</b>.</p>';
             echo '<p><b>Año: </b>' . $Pelicula[8] . '.</div>';
             echo '<p><b>Clasificacion: </b>' . $Pelicula[11] . '.</p>';
             echo '<p><b>Género: </b>' . $Pelicula[4] . '.</p>';
             echo '<p><b>Directores: </b>' . $Pelicula[9] . '.</p>';
-            echo '<p><b>Actores: </b>' . $Pelicula[10] . '.</div>';
+            echo '<p><b>Actores: </b>' . $Pelicula[10] . '.</p>';
             echo '<p><b>Sinopsis: </b>' . $Pelicula[2] . '</p>';           
             echo '</div>';
             echo '';
             echo '';
-            echo '<video src="' . $Pelicula[14] . '" controls></video>';
+            echo '<center><video width="80%" src="' . $Pelicula[14] . '" controls></video></center>';
         }
 
         ?>
@@ -124,8 +124,6 @@ SESSION_START();
 <script src="..\..\Vendor\Jquery\jquery-3.3.1.min.js"></script>
 <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
 <script src="..\..\Vendor\alertify\alertify.min.js"></script>
-<script>
-
-</script>
+<script src="..\..\Vendor\Scripts\Funciones.js"></script>
 </body>
 </html>

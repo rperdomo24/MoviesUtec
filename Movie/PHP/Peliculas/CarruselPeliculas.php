@@ -44,7 +44,8 @@
     while($Pelicula = mysqli_fetch_row($PeliculasPorGenero)) {
         $html .= '<div class="tile" data-href="../Peliculas/VerPelicula.php?Pelicula=' . $Pelicula[0]  . '">';
         $html .= '<div class="tile__media">';
-            $html .= '<a href="../Peliculas/VerPelicula.php?Pelicula=' . $Pelicula[0]  . '" title="Ver película"><img class="tile__img" src="' . $Pelicula[13] . '" title="Ver ' . $Pelicula[13] . '" alt="Pelicula-' . $Pelicula[13] . '"/></a>';
+            $html .= '<a href="../Peliculas/VerPelicula.php?Pelicula=' . $Pelicula[0]  . '" title="Ver película">';
+            $html .= '<img class="tile__img" src="' . $Pelicula[13] . '" title="Ver ' . $Pelicula[13] . '" alt="Pelicula-' . $Pelicula[13] . '"/></a>';
         $html .= '</div>';
         $html .= '<div class="tile__details">';
             $html .= '<div class="tile__title">' . $Pelicula[1] . '</div>' ;
