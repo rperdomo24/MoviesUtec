@@ -119,6 +119,7 @@
     <script src="..\..\Vendor\Jquery\jquery-3.3.1.min.js"></script>
     <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
     <script src="..\..\Vendor\alertify\alertify.min.js"></script>
+    <script src="..\..\Vendor\Scripts\Funciones.js"></script>
 
 </body>
 </html>
@@ -132,7 +133,7 @@ function enviar(){
   var Contrasenna = $("#Contrasenna").val();
   var ConfirmContrasenna = $("#ConfirmContrasenna").val();
    if(!$.isEmptyObject(Username)){
-     if(!$.isEmptyObject(mail)){
+     if(!$.isEmptyObject(mail) && ValidarCorreo(mail)){
        if(!$.isEmptyObject(Names)){
          if(!$.isEmptyObject(Apellidos)){
            if(!$.isEmptyObject(Contrasenna)){
@@ -175,7 +176,7 @@ function enviar(){
     alertify.error('por favor digite Nombres');
       }
     }else{
-  alertify.error('por favor digite Correo Electronico');
+  alertify.error('por favor digite Correo Electronico correctamente');
     }
   }else{
 alertify.error('por favor digite Nombre de usuario');

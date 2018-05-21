@@ -71,7 +71,8 @@
     </div>
     <script src="..\..\Vendor\Jquery\jquery-3.3.1.min.js"></script>
     <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
-      <script src="..\..\Vendor\alertify\alertify.min.js"></script>
+    <script src="..\..\Vendor\alertify\alertify.min.js"></script>
+   <script src="..\..\Vendor\Scripts\Funciones.js"></script>
 
 </body>
 </html>
@@ -92,7 +93,6 @@ function enviar(){
      .done(function( msg ) {
        data= JSON.parse(msg);
        if(!$.isEmptyObject(data)){
-         console.log(data);
          if(data.respuestas[0].Cuenta == 0){
             $.post("Sesiones.php",
              {"IdUsuario": data.respuestas[0].IdUsuario,
@@ -128,10 +128,6 @@ function enviar(){
     alertify.error('por favor llena contraseña y password');
   }
 }
-function ValidarCorreo(email)
-{
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
-}
+
 
 </script>
