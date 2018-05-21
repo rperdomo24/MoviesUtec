@@ -62,8 +62,8 @@ SESSION_START();
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Haste Pro!</a></li>
+            <li><a href="Principal.php">Inicio</a></li>
+            <li><a href="..\..\PHP\Pago\Planes.php">Haste Pro!</a></li>
             <li><a href="..\..\PHP\Registro\Login.php">Cerrar Sesion</a></li>
             <li><h4><b>Hola <?php echo $nom;?>!<b> ¿Qué deseas ver hoy?</h4></li>
           </ul>
