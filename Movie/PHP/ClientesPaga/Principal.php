@@ -22,24 +22,7 @@ SESSION_START();
     <div class="col-lg-12" style="margin-top:150px">
       <div class="container">
           <div class="row">
-              <div class="col-md-offset-3 col-md-6">
-                  <div class="form-login">
-                  <h4>Bienvenido.</h4>
-                  <small>por favor ingresa tus datos</small>
-                  <br>
-                  <input type="mail" id="userName" class="form-control input-sm chat-input" placeholder="Correo" />
-                  </br>
-                  <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
-                  </br>
-                  <div class="wrapper">
-                  <span class="group-btn">
-                    <input type="submit" class="btn btn-primary btn-md" value="Ingresar" id="Ingresar" onclick="enviar();" />
-                  </span>
-                  </div>
-                  </div>
-              </div>
-              
-          </div>
+            
           <?php include ("../Peliculas/CarruselPeliculas.php") ?>
       </div>
 
