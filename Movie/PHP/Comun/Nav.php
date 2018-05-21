@@ -13,6 +13,32 @@
         $EsPro = $_SESSION['Cuenta'];
     }
 
+    function EsActivo($Pagina){
+      $PathAbs = '/MoviesUtec/Movie/PHP';
+      $MenuActual = $_SERVER['REQUEST_URI'];
+      if(($PathAbs . $Pagina) == $MenuActual){
+        echo "active";
+      }else{
+        echo "";
+      }
+    }
+    $Path = '/MoviesUtec/Movie/PHP/';
+    function _EsActivo($Pagina){
+      $PathAbs = '/MoviesUtec/Movie/PHP';
+      $MenuActual = $_SERVER['REQUEST_URI'];
+      if(($PathAbs . $Pagina) == $MenuActual){
+        return "active";
+      }else{
+        return "";
+      }
+    }
+
+    $PripalPorCliente = "";
+    if($EsPro == 0){
+      $PripalPorCliente = "ClientesGratis";
+    }else{
+      $PripalPorCliente = "ClientesPaga";
+    }
 ?>
 
 <div class="navbar-wrapper">
@@ -30,15 +56,15 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="Principal.php">Inicio</a></li>
+            <li class="<?php EsActivo($PripalPorCliente . "/Principal.php"); ?>"><a href="<?php echo $Path . $PripalPorCliente . "/Principal.php" ?>">Inicio</a></li>
             <?php
             if($EsPro == 0){
-                echo '<li><a href="..\..\PHP\Pago\Planes.php">Hazte Pro!</a></li>';
+              $a = _EsActivo("/Pago/Planes.php");
+              echo '<li class="'. $a .'"><a href="..\..\PHP\Pago\Planes.php">Hazte Pro!</a></li>';
             } else {
                 // ....
             }
             ?>
-
             <li><a href="..\..\PHP\Registro\Login.php">Cerrar Sesion</a></li>
             <li><h4><b>Hola <?php echo $nom;?>!<b> ¿Qué deseas ver hoy?</h4></li>
           </ul>

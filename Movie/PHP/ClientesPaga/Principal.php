@@ -26,35 +26,7 @@ SESSION_START();
   </head>
 
   <body>
-    <div class="navbar-wrapper">
-      <div class="container">
-
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Peliculas Utec</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="../../Index.html">Inicio</a></li>
-                <li><a href="..\..\PHP\Registro\Registro.php">Registrate</a></li>
-                <li><a href="..\..\PHP\Registro\Login.php">Inicia Sesion</a></li>
-
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </div>
-
-
-
+  <?php include ("../Comun/Nav.php") ?>
     <div class="col-lg-12" style="margin-top:150px">
       <div class="container">
           <div class="row">
@@ -80,16 +52,13 @@ SESSION_START();
       </div>
 
       <footer>
-
-        <p >© 2018 Utec</p>
+        <p>© 2018 Utec</p>
       </footer>
-
     </div>
     <script src="..\..\Vendor\Jquery\jquery-3.3.1.min.js"></script>
     <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
     <script src="..\..\Vendor\alertify\alertify.min.js"></script>
     <script src="..\..\Vendor\Scripts\Funciones.js"></script>
-    
 </body>
 </html>
 <script>

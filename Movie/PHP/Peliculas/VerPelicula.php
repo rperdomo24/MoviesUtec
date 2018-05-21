@@ -50,33 +50,7 @@ SESSION_START();
     <title>Ver <?php while($Nombre = mysqli_fetch_row($NombrePelicula)) { echo $Nombre[0]; }?></title>
   </head>
   <body>
-<div class="navbar-wrapper">
-  <div class="container">
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Peliculas Utec</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="../ClientesGratis/Principal.php">Inicio</a></li>
-
-            <li><a href="../Pago/Planes.php">Haste Pro!</a></li>
-
-            <li><a href="..\..\PHP\Registro\Login.php">Cerrar Sesion</a></li>
-            <li><h4><b>Hola <?php echo $nom;?>!<b> ¿Qué deseas ver hoy?</h4></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-</div>
-    
+  <?php include ("../Comun/Nav.php") ?>
 <div class="col-lg-12" style="margin-top:100px">
   <div class="container">
         <?php
