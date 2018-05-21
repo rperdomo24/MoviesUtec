@@ -19,14 +19,10 @@ SESSION_START();
 
   <body>
   <?php include ("../Comun/Nav.php") ?>
-    <div class="col-lg-12" style="margin-top:150px">
-      <div class="container">
-          <div class="row">
-            
+    <div class="col-lg-12" style="margin-top:30px">
+      <div class="container">        
           <?php include ("../Peliculas/CarruselPeliculas.php") ?>
-      </div>
-
-      <footer>
+               <footer>
         <p>© 2018 Utec</p>
       </footer>
     </div>

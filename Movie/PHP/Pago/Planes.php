@@ -48,7 +48,7 @@ SESSION_START();
 
   <body>
     <?php include ("../Comun/Nav.php") ?>
-    <div class="col-lg-12" style="margin-top:100px">       
+    <div class="col-lg-12">       
 <div class="container">
     <div class="row">
   <div class="text-center">
@@ -75,7 +75,11 @@ SESSION_START();
             echo '<div class="panel-footer">';
             echo '<h3> $'. $Planes[2].'</h3>';
             echo '<h4>'. $Planes[5].' Mensual <h4>';
-            echo '<button class="btn btn-lg btn-success">Hazte Premium!</button>';
+            if($Planes[2] != 0){
+              echo '<a href="Carrito.php?idCatalogoPlanes='.$Planes[0].'" class="btn btn-lg btn-success">Hazte Premium!</a>';
+            }else{
+              echo '<h3>Plan Actual </h3>';
+            }
             echo '</div>';
             echo '</div>';
             echo '</div>';
