@@ -90,9 +90,7 @@ SESSION_START();
 <div class="col-lg-12" style="margin-top:100px">
   <div class="container">
         <?php
-
         $_Pelicula = getSQLResultSet($connect, $QueryPelicula);
-
         while($Pelicula = mysqli_fetch_row($_Pelicula))
         {    
             echo '<div>';
@@ -111,6 +109,13 @@ SESSION_START();
         }
 
         ?>
+        <br>
+        <br>
+        <div class="col-lg-12" style="margin-top:100px">
+            <div class="container">  
+                <?php include ("CarruselPeliculas.php") ?>
+            </div>
+        </div>
     <footer>
       <p>© 2018 Utec</p>
     </footer>
