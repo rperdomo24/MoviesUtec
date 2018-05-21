@@ -8,12 +8,6 @@ SESSION_START();
     } else {
         $nom = $_SESSION['Usuario'];
     }
-
-    if(!isset($_SESSION['Cuenta'])) {
-        header("Location: ..\Registro\Login.php");
-    } else {
-        $EsPro = $_SESSION['Cuenta'];
-    }
     
     $PeliculaId = $_GET["Pelicula"];
 

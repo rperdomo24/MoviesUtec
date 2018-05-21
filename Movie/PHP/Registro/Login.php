@@ -88,6 +88,7 @@ function enviar(){
      $.ajax({
      method: "GET",
      url: "../Database/Login.php",
+     cache: false,
      data: { email: mailu, pass: passu}
    })
      .done(function( msg ) {
