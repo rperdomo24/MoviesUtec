@@ -72,54 +72,9 @@ SESSION_START();
     </nav>
 </div>
     
-<div class="col-lg-12" style="margin-top:100px">
-  <div class="container">    
-        <?php
-        while($Genero = mysqli_fetch_row($TodosGeneros)) {
-          echo '<div class="row">';
-          echo '<h1>' . $Genero[1] . '</h1>';
-          echo '<div class="row__inner">';
-
-          $QueryPeliculasPorGenero = 
-            "SELECT IdPelicula, " .
-            "Titulo, " .
-            "Sinopsis, " .
-            "UrlPaginaOficial, " .
-            "gp.Nombre AS Genero, " .
-            "gp.Descripcion AS GeneroDescripcion, " .
-            "na.Nombre AS Nacionalidad, " .
-            "DuracionMinutos, " .
-            "Anio, " .
-            "Directores, " .
-            "Actores, " .
-            "cl.Nombre AS Clasificacion, " .
-            "cl.Descripcion AS ClasificacionDescripcion, " .
-            "UrlImgPortada, " .
-            "UrlPelicula " .
-            "FROM peliculas AS pe " .
-            "INNER JOIN generopelicula AS gp on gp.IdGeneroPelicula = pe.FKGenero " .
-            "INNER JOIN nacionalidades AS na on na.IdNacionalidad = pe.FKNacionalidad " .
-            "INNER JOIN clasificacionpelicula AS cl on cl.IdClasificacionPelicula = pe.FKClasificacion " .
-            "WHERE gp.IdGeneroPelicula = " . $Genero[0] .
-            " ORDER BY pe.Anio DESC LIMIT 20;";
-          
-          $PeliculasPorGenero = getSQLResultSet($connect, $QueryPeliculasPorGenero);
-
-          while($Pelicula = mysqli_fetch_row($PeliculasPorGenero)) {
-            echo '<div class="tile">';
-              echo '<div class="tile__media">';
-                echo '<img class="tile__img" src="' . $Pelicula[13] . '"/>';
-              echo '</div>';
-              echo '<div class="tile__details">';
-                echo '<div class="tile__title">' . $Pelicula[1] . '</div>' ;
-              echo '</div>';
-            echo '</div>';
-          }
-
-          echo '</div>';
-          echo '</div>';
-        }
-        ?>
+    <div class="col-lg-12" style="margin-top:100px">
+      <div class="container">  
+          <?php include ("../Peliculas/CarruselPeliculas.php") ?>
       </div>
     </div>
     <footer>
@@ -130,8 +85,6 @@ SESSION_START();
 <script src="..\..\Vendor\Jquery\jquery-3.3.1.min.js"></script>
 <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
 <script src="..\..\Vendor\alertify\alertify.min.js"></script>
-<script>
-
-</script>
+<script src="..\..\Vendor\Scripts\Funciones.js"></script>
 </body>
 </html>
