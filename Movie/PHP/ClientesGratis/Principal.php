@@ -51,28 +51,6 @@ SESSION_START();
   <div class="container">
     <nav class="navbar navbar-inverse navbar-static-top">
       <div class="container">
-<<<<<<< HEAD
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">Peliculas Utec</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li><a href="#">Inicio</a></li>
-                <li><a href="..\..\PHP\Pago\Planes.php">Haste Pro!</a></li>
-                <li><a href="..\..\PHP\Registro\Login.php">Cerrar Sesion</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-=======
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -90,7 +68,6 @@ SESSION_START();
             <li><h4><b>Hola <?php echo $nom;?>!<b> ¿Qué deseas ver hoy?</h4></li>
           </ul>
         </div>
->>>>>>> 5c4a6077ef177b5e11e64614a9f0b5d82bb7f83b
       </div>
     </nav>
 </div>
