@@ -10,4 +10,16 @@ $bd = "mysqldatabase29190";//base de dato
 	if (mysqli_connect_errno($connect)){
 		die('Error de Conexión: ' . mysqli_connect_errno());
 	}
+
+	function getRawSQLResultSet($connect, $Query){
+        $mysqli=$connect;
+		if ($mysqli->connect_errno) {
+		  printf("Connect failed: %s\n", $mysqli->connect_error);
+		  printf("Error: %s\n", $mysqli->connect_errno);
+		  exit();
+		} else {
+		  return $mysqli->query($Query);
+		}
+		$mysqli->close();
+	}
 ?>

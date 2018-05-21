@@ -1,10 +1,23 @@
+<?php
+include ("../Database/conexion.php");
+
+SESSION_START();
+
+	if(!isset($_SESSION['Usuario'])) {
+		header("Location: ..\Registro\Login.php");
+	}
+	else {
+    $nom = $_SESSION['Usuario'];
+  }
+  
+?>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Principal</title>
+    <link href="../../CSS/Slider.css" rel="stylesheet">
     <link href="..\..\Vendor/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="..\..\CSS/carousel.css" rel="stylesheet">
     <link href="..\..\Vendor\alertify\css\alertify.min.css" rel="stylesheet">
@@ -61,7 +74,9 @@
                   </div>
                   </div>
               </div>
+              
           </div>
+          <?php include ("../Peliculas/CarruselPeliculas.php") ?>
       </div>
 
       <footer>

@@ -7,7 +7,7 @@
                             "WHERE EXISTS (SELECT * FROM Peliculas WHERE FKGenero = IdGeneroPelicula) " .
                             "ORDER BY Nombre ASC;";
 
-    $TodosGeneros = getSQLResultSet($connect, $QueryGeneroPelicula);
+    $TodosGeneros = getRawSQLResultSet($connect, $QueryGeneroPelicula);
 
     $html = "";
 
@@ -39,7 +39,7 @@
         "WHERE gp.IdGeneroPelicula = " . $Genero[0] .
         " ORDER BY pe.Anio DESC LIMIT 20;";
     
-    $PeliculasPorGenero = getSQLResultSet($connect, $QueryPeliculasPorGenero);
+    $PeliculasPorGenero = getRawSQLResultSet($connect, $QueryPeliculasPorGenero);
 
     while($Pelicula = mysqli_fetch_row($PeliculasPorGenero)) {
         $html .= '<div class="tile" data-href="../Peliculas/VerPelicula.php?Pelicula=' . $Pelicula[0]  . '">';

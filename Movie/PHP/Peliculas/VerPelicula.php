@@ -9,19 +9,13 @@ SESSION_START();
         $nom = $_SESSION['Usuario'];
     }
 
+    if(!isset($_SESSION['Cuenta'])) {
+        header("Location: ..\Registro\Login.php");
+    } else {
+        $EsPro = $_SESSION['Cuenta'];
+    }
+    
     $PeliculaId = $_GET["Pelicula"];
-
-    function getSQLResultSet($connect, $Query){
-        $mysqli=$connect;
-		if ($mysqli->connect_errno) {
-		  printf("Connect failed: %s\n", $mysqli->connect_error);
-		  printf("Error: %s\n", $mysqli->connect_errno);
-		  exit();
-		} else {
-		  return $mysqli->query($Query);
-		}
-		$mysqli->close();
-	}
 
     $QueryPelicula = "SELECT IdPelicula, " .
                     "Titulo, " .
@@ -78,7 +72,9 @@ SESSION_START();
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="../ClientesGratis/Principal.php">Inicio</a></li>
+
             <li><a href="../Pago/Planes.php">Haste Pro!</a></li>
+
             <li><a href="..\..\PHP\Registro\Login.php">Cerrar Sesion</a></li>
             <li><h4><b>Hola <?php echo $nom;?>!<b> ¿Qué deseas ver hoy?</h4></li>
           </ul>
@@ -90,7 +86,7 @@ SESSION_START();
 <div class="col-lg-12" style="margin-top:100px">
   <div class="container">
         <?php
-        $_Pelicula = getSQLResultSet($connect, $QueryPelicula);
+        $_Pelicula = getRawSQLResultSet($connect, $QueryPelicula);
         while($Pelicula = mysqli_fetch_row($_Pelicula))
         {    
             echo '<div>';
@@ -105,8 +101,12 @@ SESSION_START();
             echo '</div>';
             echo '';
             echo '';
-            echo '<center><a href="#">Hazte PRO para ver la pelicula completa!</a></center>';
-            echo '<center><img id="PagaPro" src="../../IMG/Paga.jpg" /></center>';
+
+            if($EsPro == 0){
+                echo '<center><a href="#">Hazte PRO para ver la pelicula completa!</a></center>';
+                echo '<center><img id="PagaPro" src="../../IMG/Paga.jpg" /></center>';
+            }
+            
             echo '<center><div id="cntPelicula"><video id="idPelicula" width="80%" controls>';
                 echo '<source src="' . $Pelicula[14] . '" type="video/mp4" >';
             echo '</video></div></center>';
@@ -131,11 +131,9 @@ SESSION_START();
 <script src="..\..\Vendor\Scripts\Funciones.js"></script>
 <script>
     $(function(){
-        $("img#PagaPro").hide();
-        var Pro = false;
-        if(Pro){
-            // ...
-        } else {
+        var EsPro = <?php echo $EsPro; ?>;
+        if(EsPro == 0){
+            $("img#PagaPro").hide();
             EvaluarTiempoVideo();
         }
     });

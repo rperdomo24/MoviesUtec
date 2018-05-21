@@ -9,28 +9,7 @@ SESSION_START();
 	else {
     $nom = $_SESSION['Usuario'];
   }
-
-  function getSQLResultSet($connect, $Query){
-    $mysqli=$connect;
-		if ($mysqli->connect_errno) {
-		  printf("Connect failed: %s\n", $mysqli->connect_error);
-		  printf("Error: %s\n", $mysqli->connect_errno);
-		  exit();
-		} else {
-		  return $mysqli->query($Query);
-		}
-		$mysqli->close();
-	}
-
-  $QueryGeneroPelicula = "SELECT IdGeneroPelicula, ".
-                        "Nombre, " .
-                        "Descripcion " .
-                        "FROM GeneroPelicula " .
-                        "WHERE EXISTS (SELECT * FROM Peliculas WHERE FKGenero = IdGeneroPelicula) " .
-                        "ORDER BY Nombre ASC;";
-
-  $TodosGeneros = getSQLResultSet($connect, $QueryGeneroPelicula);
-  
+    
 ?>
 
 <html lang="en">
