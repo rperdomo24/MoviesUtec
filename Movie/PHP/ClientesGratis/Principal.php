@@ -106,9 +106,9 @@ SESSION_START();
           $PeliculasPorGenero = getSQLResultSet($connect, $QueryPeliculasPorGenero);
 
           while($Pelicula = mysqli_fetch_row($PeliculasPorGenero)) {
-            echo '<div class="tile">';
+            echo '<div class="tile" data-href="../Peliculas/VerPelicula.php?Pelicula=' . $Pelicula[0]  . '">';
               echo '<div class="tile__media">';
-                echo '<img class="tile__img" src="' . $Pelicula[13] . '"/>';
+                echo '<a href="../Peliculas/VerPelicula.php?Pelicula=' . $Pelicula[0]  . '" title="Ver película"><img class="tile__img" src="' . $Pelicula[13] . '" title="Ver ' . $Pelicula[13] . '" alt="Pelicula-' . $Pelicula[13] . '"/></a>';
               echo '</div>';
               echo '<div class="tile__details">';
                 echo '<div class="tile__title">' . $Pelicula[1] . '</div>' ;
@@ -131,6 +131,15 @@ SESSION_START();
 <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
 <script src="..\..\Vendor\alertify\alertify.min.js"></script>
 <script>
+
+$(function(){
+  $('div.tile').on('click', function(){
+    var href = $(this).attr("data-href");
+    if(href){
+      window.location.href = href;
+    }
+  });
+});
 
 </script>
 </body>
