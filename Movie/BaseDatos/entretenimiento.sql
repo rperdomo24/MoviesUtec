@@ -381,7 +381,7 @@ INSERT INTO Peliculas(
   FKClasificacion, 
   UrlImgPortada, 
   UrlPelicula)
-VALUES('Titanic', 
+VALUES('Jurasic Park', 
 'Es una próxima película de ciencia ficción, acción y aventura hispano-estadounidense. Es la secuela de Jurassic World estrenada en 2015, y la quinta entrega de la franquicia de Parque Jurásico. Derek Connolly y el director de Jurassic World, Colin Trevorrow, regresan como los escritores del guion, mientras que el cineasta español J. A. Bayona se encarga de la dirección. Será producida por Frank Marshall, Patrick Crowley y Belén Atienza. Trevorrow y el director original de Parque Jurásico, Steven Spielberg, son los productores ejecutivos.',
 'https://es.wikipedia.org/wiki/Titanic_(película_de_1997)',
 3, -- Acción

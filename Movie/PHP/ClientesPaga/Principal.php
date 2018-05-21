@@ -2,14 +2,6 @@
 include ("../Database/conexion.php");
 
 SESSION_START();
-
-	if(!isset($_SESSION['Usuario'])) {
-		header("Location: ..\Registro\Login.php");
-	}
-	else {
-    $nom = $_SESSION['Usuario'];
-  }
-  
 ?>
 <html lang="en">
 <head>
