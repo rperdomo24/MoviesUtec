@@ -87,8 +87,9 @@ SESSION_START();
     </div>
     <script src="..\..\Vendor\Jquery\jquery-3.3.1.min.js"></script>
     <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
-      <script src="..\..\Vendor\alertify\alertify.min.js"></script>
-
+    <script src="..\..\Vendor\alertify\alertify.min.js"></script>
+    <script src="..\..\Vendor\Scripts\Funciones.js"></script>
+    
 </body>
 </html>
 <script>

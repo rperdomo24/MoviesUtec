@@ -38,7 +38,7 @@ SESSION_START();
                     "INNER JOIN clasificacionpelicula AS cl on cl.IdClasificacionPelicula = pe.FKClasificacion " .
                     "WHERE pe.IdPelicula=" . $PeliculaId . ";";
 
-    $NombrePelicula = getSQLResultSet($connect, "SELECT Titulo FROM Peliculas WHERE IdPelicula=" . $PeliculaId . ";");
+    $NombrePelicula = getRawSQLResultSet($connect, "SELECT Titulo FROM Peliculas WHERE IdPelicula=" . $PeliculaId . ";");
   
 ?>
 
