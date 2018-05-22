@@ -14,7 +14,7 @@
     }
 
     function EsActivo($Pagina){
-      $PathAbs = '/MoviesUtec/Movie/PHP/';
+      $PathAbs = '/PHP/';
       $MenuActual = $_SERVER['REQUEST_URI'];
       if(($PathAbs . $Pagina) == $MenuActual){
         echo "active";
@@ -22,9 +22,9 @@
         echo "";
       }
     }
-    $Path = '/MoviesUtec/Movie/PHP/';
+    $Path = '/PHP/';
     function _EsActivo($Pagina){
-      $PathAbs = '/MoviesUtec/Movie/PHP';
+      $PathAbs = '/PHP';
       $MenuActual = $_SERVER['REQUEST_URI'];
       if(($PathAbs . $Pagina) == $MenuActual){
         return "active";

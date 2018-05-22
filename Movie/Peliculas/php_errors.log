@@ -1,0 +1,135 @@
+[20-May-2018 10:46:04 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:46:13 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:47:11 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:47:20 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:47:40 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:47:40 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:47:40 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:47:59 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:47:59 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:47:59 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 10:48:08 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 11:35:49 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 11:36:28 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 11:38:56 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 11:40:44 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 11:59:56 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 12:00:57 America/Los_Angeles] PHP Warning:  include(D:\home\site\wwwroot\PHP\Database\conexion.php): failed to open stream: No such file or directory in D:\home\site\wwwroot\PHP\Database\Registro.php on line 3
+[20-May-2018 12:00:57 America/Los_Angeles] PHP Warning:  include(): Failed opening '../Database/conexion.php' for inclusion (include_path='.;C:\php\pear') in D:\home\site\wwwroot\PHP\Database\Registro.php on line 3
+[20-May-2018 12:00:57 America/Los_Angeles] PHP Notice:  Undefined variable: connect in D:\home\site\wwwroot\PHP\Database\Registro.php on line 14
+[20-May-2018 12:00:57 America/Los_Angeles] PHP Notice:  Trying to get property of non-object in D:\home\site\wwwroot\PHP\Database\Registro.php on line 23
+[20-May-2018 12:00:57 America/Los_Angeles] PHP Fatal error:  Call to a member function query() on null in D:\home\site\wwwroot\PHP\Database\Registro.php on line 28
+[20-May-2018 12:02:18 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 12:11:55 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 12:21:25 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 13:37:48 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 13:51:03 America/Los_Angeles] PHP Warning:  mysqli_connect(): (HY000/2002): An attempt was made to access a socket in a way forbidden by its access permissions.
+ in D:\home\site\wwwroot\PHP\Database\conexion.php on line 7
+[20-May-2018 14:07:58 America/Los_Angeles] PHP Notice:  Undefined variable: username in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:07:58 America/Los_Angeles] PHP Warning:  mysqli_real_connect(): (HY000/9002): The connection string may not be right. Please visit portal for references. in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:04 America/Los_Angeles] PHP Notice:  Undefined variable: username in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:04 America/Los_Angeles] PHP Warning:  mysqli_real_connect(): (HY000/9002): The connection string may not be right. Please visit portal for references. in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:04 America/Los_Angeles] PHP Notice:  Undefined variable: username in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:04 America/Los_Angeles] PHP Warning:  mysqli_real_connect(): (HY000/9002): The connection string may not be right. Please visit portal for references. in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:05 America/Los_Angeles] PHP Notice:  Undefined variable: username in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:05 America/Los_Angeles] PHP Warning:  mysqli_real_connect(): (HY000/9002): The connection string may not be right. Please visit portal for references. in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:05 America/Los_Angeles] PHP Notice:  Undefined variable: username in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:05 America/Los_Angeles] PHP Warning:  mysqli_real_connect(): (HY000/9002): The connection string may not be right. Please visit portal for references. in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:05 America/Los_Angeles] PHP Notice:  Undefined variable: username in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:05 America/Los_Angeles] PHP Warning:  mysqli_real_connect(): (HY000/9002): The connection string may not be right. Please visit portal for references. in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:05 America/Los_Angeles] PHP Notice:  Undefined variable: username in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:08:05 America/Los_Angeles] PHP Warning:  mysqli_real_connect(): (HY000/9002): The connection string may not be right. Please visit portal for references. in D:\home\site\wwwroot\PHP\Database\conexion.php on line 8
+[20-May-2018 14:14:52 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\ClientesGratis\Principal.php on line 90
+[21-May-2018 01:38:46 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 01:38:46 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 01:38:46 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 07:23:33 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 07:23:33 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 07:23:33 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 08:06:14 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 08:06:14 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 08:06:14 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 08:25:38 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 08:25:38 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 08:25:38 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 08:25:38 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 73
+[21-May-2018 08:25:38 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 102
+[21-May-2018 08:28:56 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 08:28:56 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 08:28:56 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 08:29:32 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 08:29:32 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 08:29:32 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 09:02:39 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 09:02:39 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 09:02:39 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 13:07:28 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 13:07:28 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 13:07:28 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 13:10:41 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 13:10:41 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 13:10:41 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 13:10:41 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Pago\Planes.php on line 56
+[21-May-2018 14:14:26 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 14:14:26 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 61
+[21-May-2018 14:14:26 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 69
+[21-May-2018 16:00:25 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 16:00:25 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 62
+[21-May-2018 16:00:25 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 70
+[21-May-2018 16:00:25 America/Los_Angeles] PHP Notice:  Undefined index: Cuenta in D:\home\site\wwwroot\PHP\Peliculas\CarruselPeliculas.php on line 3
+[21-May-2018 17:09:07 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 17:09:07 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 62
+[21-May-2018 17:09:07 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 70
+[21-May-2018 17:09:07 America/Los_Angeles] PHP Notice:  Undefined index: Cuenta in D:\home\site\wwwroot\PHP\Peliculas\CarruselPeliculas.php on line 3
+[21-May-2018 17:18:20 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 17:18:20 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 62
+[21-May-2018 17:18:20 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 70
+[21-May-2018 17:18:20 America/Los_Angeles] PHP Notice:  Undefined index: Cuenta in D:\home\site\wwwroot\PHP\Peliculas\CarruselPeliculas.php on line 3
+[21-May-2018 18:08:44 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 18:08:44 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 62
+[21-May-2018 18:08:44 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 70
+[21-May-2018 18:08:44 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 80
+[21-May-2018 18:08:44 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 88
+[21-May-2018 18:08:44 America/Los_Angeles] PHP Notice:  Undefined index: Cuenta in D:\home\site\wwwroot\PHP\Peliculas\CarruselPeliculas.php on line 3
+[21-May-2018 18:08:44 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 116
+[21-May-2018 18:14:13 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 18:14:13 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 62
+[21-May-2018 18:14:13 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 70
+[21-May-2018 18:14:13 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 80
+[21-May-2018 18:14:13 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 88
+[21-May-2018 18:14:13 America/Los_Angeles] PHP Notice:  Undefined index: Cuenta in D:\home\site\wwwroot\PHP\Peliculas\CarruselPeliculas.php on line 3
+[21-May-2018 18:14:13 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 116
+[21-May-2018 18:28:22 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 18:28:22 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 62
+[21-May-2018 18:28:22 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 70
+[21-May-2018 18:28:22 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 80
+[21-May-2018 18:28:22 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 88
+[21-May-2018 18:28:22 America/Los_Angeles] PHP Notice:  Undefined index: Cuenta in D:\home\site\wwwroot\PHP\Peliculas\CarruselPeliculas.php on line 3
+[21-May-2018 18:28:22 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 116
+[21-May-2018 18:57:17 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 37
+[21-May-2018 18:57:17 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 62
+[21-May-2018 18:57:17 America/Los_Angeles] PHP Notice:  Undefined variable: nom in D:\home\site\wwwroot\PHP\Comun\Nav.php on line 70
+[21-May-2018 18:57:17 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 80
+[21-May-2018 18:57:17 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 88
+[21-May-2018 18:57:17 America/Los_Angeles] PHP Notice:  Undefined index: Cuenta in D:\home\site\wwwroot\PHP\Peliculas\CarruselPeliculas.php on line 3
+[21-May-2018 18:57:17 America/Los_Angeles] PHP Notice:  Undefined variable: EsPro in D:\home\site\wwwroot\PHP\Peliculas\VerPelicula.php on line 116
