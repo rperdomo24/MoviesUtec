@@ -60,13 +60,12 @@ SESSION_START();
       <div class="col-lg-12" style="margin-bottom:50px;">
   <?php include ("../Buscador/Buscador.php") ?>
 </div>
-
         <?php
         $_Pelicula = getRawSQLResultSet($connect, $QueryPelicula);
         while($Pelicula = mysqli_fetch_row($_Pelicula))
         {    
             echo '<div>';
-            echo '<img width="248px" height="375px" src="' . $Pelicula[13] . '" title="" alt="img" />';
+            echo '<img width="248px" height="310px" src="' . $Pelicula[13] . '" title="" alt="img" />';
             echo '<p><h2><b>Ranking</b></h2></p>';
             echo '<p><input id="input-id" type="text" value="'. $Pelicula[16].'" class="rating" data-size="lg" ></p>';
             echo '<p><b>' . $Pelicula[1] . ' - ' . $Pelicula[7] . 'min</b>.</p>';
