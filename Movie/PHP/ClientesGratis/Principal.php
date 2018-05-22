@@ -19,8 +19,9 @@ SESSION_START();
   </head>
   <body>
     <?php include ("../Comun/Nav.php") ?>
-    <div class="col-lg-12" style="margin-top:100px">
+    <div class="col-lg-12" >
       <div class="container">  
+          <?php include ("../Buscador/Buscador.php") ?>
           <?php include ("../Peliculas/CarruselPeliculas.php") ?>
       </div>
     </div>

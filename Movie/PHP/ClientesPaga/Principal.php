@@ -15,12 +15,15 @@ SESSION_START();
     <link href="..\..\Vendor\alertify\css\alertify.min.css" rel="stylesheet">
     <link href="..\..\Vendor\alertify\css\alertify.rtl.min.css" rel="stylesheet">
     <link href="..\..\Vendor\alertify\css\themes\default.min.css" rel="stylesheet">
+    <link href="..\..\Vendor\start-boostrap\css\star-rating.min.css" rel="stylesheet">
   </head>
-
   <body>
   <?php include ("../Comun/Nav.php") ?>
-    <div class="col-lg-12" style="margin-top:30px">
+    <div class="col-lg-12" >
       <div class="container">        
+          <?php include ("../Buscador/Buscador.php") ?>
+          
+          <br>
           <?php include ("../Peliculas/CarruselPeliculas.php") ?>
                <footer>
         <p>© 2018 Utec</p>
@@ -28,8 +31,10 @@ SESSION_START();
     </div>
     <script src="..\..\Vendor\Jquery\jquery-3.3.1.min.js"></script>
     <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
+    <script src="..\..\Vendor\start-boostrap\js\star-rating.min.js"></script>
     <script src="..\..\Vendor\alertify\alertify.min.js"></script>
     <script src="..\..\Vendor\Scripts\Funciones.js"></script>
+    
 </body>
 </html>
 <script>

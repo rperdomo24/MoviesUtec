@@ -26,7 +26,8 @@ SESSION_START();
                     "cl.Descripcion AS ClasificacionDescripcion, " .
                     "UrlImgPortada, " .
                     "UrlPelicula, " .
-                    "tr.UrlTriller " .
+                    "tr.UrlTriller, " .
+                    "Ranking " .
                     "FROM peliculas AS pe " .
                     "LEFT JOIN Trailers AS tr on tr.FKPelicula = pe.IdPelicula " .
                     "INNER JOIN generopelicula AS gp on gp.IdGeneroPelicula = pe.FKGenero " .
@@ -49,18 +50,25 @@ SESSION_START();
     <link href="..\..\Vendor\alertify\css\alertify.min.css" rel="stylesheet">
     <link href="..\..\Vendor\alertify\css\alertify.rtl.min.css" rel="stylesheet">
     <link href="..\..\Vendor\alertify\css\themes\default.min.css" rel="stylesheet">
+    <link href="..\..\Vendor\start-boostrap\css\star-rating.min.css" rel="stylesheet">
     <title>Ver <?php while($Nombre = mysqli_fetch_row($NombrePelicula)) { echo $Nombre[0]; }?></title>
   </head>
   <body>
   <?php include ("../Comun/Nav.php") ?>
-<div class="col-lg-12" style="margin-top:100px">
+<div class="col-lg-12" >
   <div class="container">
+      <div class="col-lg-12" style="margin-bottom:50px;">
+  <?php include ("../Buscador/Buscador.php") ?>
+</div>
+
         <?php
         $_Pelicula = getRawSQLResultSet($connect, $QueryPelicula);
         while($Pelicula = mysqli_fetch_row($_Pelicula))
         {    
             echo '<div>';
             echo '<img width="248px" height="375px" src="' . $Pelicula[13] . '" title="" alt="img" />';
+            echo '<p><h2><b>Ranking</b></h2></p>';
+            echo '<p><input id="input-id" type="text" value="'. $Pelicula[16].'" class="rating" data-size="lg" ></p>';
             echo '<p><b>' . $Pelicula[1] . ' - ' . $Pelicula[7] . 'min</b>.</p>';
             echo '<p><b>Año: </b>' . $Pelicula[8] . '.</div>';
             echo '<p><b>Clasificacion: </b>' . $Pelicula[11] . '.</p>';
@@ -107,9 +115,11 @@ SESSION_START();
 </div>
 <script src="..\..\Vendor\Jquery\jquery-3.3.1.min.js"></script>
 <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
+<script src="..\..\Vendor\start-boostrap\js\star-rating.min.js"></script>
 <script src="..\..\Vendor\alertify\alertify.min.js"></script>
 <script src="..\..\Vendor\Scripts\Funciones.js"></script>
 <script>
+     $('#input-id').rating({displayOnly: true, step: 0.5});
     $(function(){
         $("img#PagaPro").hide();
         /*
