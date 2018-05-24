@@ -221,7 +221,7 @@ function Comentar(){
                    data= JSON.parse(msg);
                      if(data.Result == 1){
                         alertify.success('Comentario Agregado Correctamente');
-                        setTimeout("location.href='location.reload();'",1000);
+                        setTimeout("location.reload();",1000);
                      }
 
                  })
