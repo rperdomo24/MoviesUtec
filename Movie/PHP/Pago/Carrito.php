@@ -6,6 +6,7 @@ SESSION_START();
         header("Location: ..\Registro\Login.php");
     } else {
         $nom = $_SESSION['Usuario'];
+        $IdUsuario = $_SESSION['IdUsuario'];
     }
     if(!isset($_GET["idCatalogoPlanes"])) {
       header("Location: Planes.php");
@@ -56,6 +57,16 @@ body { margin-top:20px; }
 .panel-title {display: inline;font-weight: bold;}
 .checkbox.pull-right { margin: 0; }
 .pl-ziro { padding-left: 0px; }
+
+        #cargando,#carga{
+            text-align: center;
+        }
+
+        #cargando{
+            display:none;
+        }
+   
+
 </STYLE>
   </head>
 
@@ -124,6 +135,11 @@ body { margin-top:20px; }
         
 
 
+<div id='cargando'>
+  <img src="../../IMG/CARGANDO.gif" ><h3>Cargando página ...</h3>
+</div>
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
@@ -137,9 +153,10 @@ body { margin-top:20px; }
       </div>
       <div class="modal-body">
       
+      <input type="hidden" id="IdUsuario" value="<?php echo $IdUsuario ?>">
       <input type="hidden" id="Id_Producto" value="<?php echo $id ?>">
-       
-            <div class="panel panel-default">
+      <input type="hidden" id="Total" value=" <?php echo $total?>">  
+  <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
                         Metodo de pago
@@ -158,7 +175,7 @@ body { margin-top:20px; }
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-7 col-md-7">
+                        <div class="col-xs-6 col-md-6">
                             <div class="form-group">
                                 <label for="expityMonth">
                                     Fecha de expiracion</label>
@@ -186,8 +203,11 @@ body { margin-top:20px; }
                 </li>
             </ul>
             <br/>
-            <a href="#" class="btn btn-success btn-lg btn-block" role="button">Finalizar compra</a>
+            <button class="btn btn-success btn-lg btn-block" role="button" onclick="RealizarCompra();"> Finalizar compra</button>
         </div>
+
+
+          
       
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -212,11 +232,110 @@ body { margin-top:20px; }
     <script src="..\..\Vendor\Jquery\jquery-3.3.1.min.js"></script>
     <script src="..\..\Vendor\bootstrap-3.3.7\js\bootstrap.min.js"></script>
       <script src="..\..\Vendor\alertify\alertify.min.js"></script>
+     
 
 </body>
 </html>
 <script>
 
+$('#expityYear').on('change', function() {
+  var value = $(this).val(); 
+  if (isNaN(value)){ 
+            alert("Tiene que introducir un número entero en el AÑO."); 
+         }else{ 
+            if (value!=4){ 
+           alert("Debe tener 4 DIGITOS."); 
+        } 
+     }   
+    });
+
+
+function getCardType(cardNo) {
+
+  var cards = {
+    "American Express": /^3[47][0-9]{13}$/,
+    "Mastercard": /^5[1-5][0-9]{14}$/,
+    "Visa": /^4[0-9]{12}(?:[0-9]{3})?$/
+  };
+  
+  for(var card in cards) {
+    if (cards[card].test(cardNo)) {
+      return card;
+    }
+  }
+  
+  return undefined;
+}
+
+$('#cardNumber').on('change', function() {
+  var value = $(this).val().trim();
+  
+  var cardType = getCardType(value);
+  
+  if (!cardType) {
+    alert('tarjeta invalida');
+  } else {
+    alert('tarjeta tipo:' + cardType);
+    $(this).val(Array(value.length-4).join("X")+value.substring(value.length-4));
+  }      
+});
+
+
+function RealizarCompra(){
+  var cardNumber = $("#cardNumber").val();
+  var expityMonth = $("#expityMonth").val();
+  var expityYear = $("#expityYear").val();
+  var cvCode = $("#cvCode").val();
+  var IdProducto =$("#Id_Producto").val();
+  var IdUsuario =$("#IdUsuario").val();
+  var Total = $("#Total").val();
+
+   if(!$.isEmptyObject(cardNumber)){
+     if(!$.isEmptyObject(expityMonth)){
+       if(!$.isEmptyObject(expityYear)){
+         if(!$.isEmptyObject(cvCode)){
+            $('#cargando').show();
+               $.ajax({
+                 method: "GET",
+                 url: "../Database/Paga.php",
+                 data: { IdUsuario: IdUsuario,
+                         IdProducto: IdProducto,
+                         Total: Total
+                      }
+               })
+                 .done(function( msg ) {
+                    $('#myModal').modal('toggle');
+                    $('#cargando').hide();
+                   data= JSON.parse(msg);
+                     console.log(data);
+                     if(data.Result == 1){
+                        alertify.success('Compra creada Correctamente');
+                        setTimeout("location.href='../Registro/CerrarSesion.php'",5000);
+                     }
+
+                 })
+                 .fail(function (msg) {
+                    $('#cargando').hide();
+                alert( "error: " + msg );
+                });
+            
+          }else{
+        alertify.error('Digite el cvv');
+          }
+        }else{
+      alertify.error('Digite el año');
+        }
+      }else{
+    alertify.error('Digite el mes correcto');
+      }
+    }else{
+  alertify.error('Digite correctamente un numero de tarjeta');
+    }
+  
+}
+
+
 
 
 </script>
+

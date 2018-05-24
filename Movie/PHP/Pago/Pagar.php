@@ -56,7 +56,7 @@ SESSION_START();
 <div class="container">
     <div class="row">
   <div class="text-center">
-    <h2>Tu mejor Desicion</h2>
+    <h2>Tu mejor decisión</h2>
     <h3>Lo mejor para ti! <?php echo $nom;?>!</h>
     <h4>Lista de compra</h4>
     
@@ -88,7 +88,7 @@ SESSION_START();
           echo '</div>';
           echo '</div>';  
           echo '<td data-th="Price">$'. $Planes[2].'</td>';          
-          echo '<td data-th="Subtotal" class="text-center">'. $Planes[2].'</td>';
+          echo '<td data-th="Subtotal" class="text-center">$ '. $Planes[2].'</td>';
           echo '<td class="actions" data-th="">';        								
           echo '	</td>';       
            echo '</td>';

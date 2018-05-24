@@ -74,7 +74,7 @@ SESSION_START();
             echo '</div>';
             echo '<div class="panel-footer">';
             echo '<h3> $'. $Planes[2].'</h3>';
-            echo '<h4>'. $Planes[5].' Mensual <h4>';
+            echo '<h4>'. $Planes[5].' <h4>';
             if($Planes[2] != 0){
               echo '<a href="Carrito.php?idCatalogoPlanes='.$Planes[0].'" class="btn btn-lg btn-success">Hazte Premium!</a>';
             }else{
