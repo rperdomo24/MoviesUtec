@@ -15,7 +15,7 @@
     <div class="col-md-3">
       <div class="input-group">
         <span class="input-group-addon"><span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span></span>
-        <input type="text" class="form-control" id="search" placeholder="Search video">
+        <input type="text" class="form-control" id="search" placeholder="Buscar por nombre de pelicula">
       </div>
     </div>
     <div class="col-md-3 col-md-offset-3" id="result">

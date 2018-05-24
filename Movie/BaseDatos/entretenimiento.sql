@@ -404,3 +404,46 @@ CREATE TABLE Trailers
 
 insert into Trailers(FKPelicula, UrlTriller)
 values (1, '../../Peliculas/Triller-Titanic-1997.mp4')
+
+CREATE TABLE GeneroCanciones
+(
+  IdGeneroCancion int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  Nombre varchar(100),
+  Descripcion varchar(500)
+);
+
+INSERT INTO GeneroCanciones(Nombre, Descripcion)
+VALUES
+('Trap', 'Descripción...'), 
+('Rap', 'Descripción...'),
+('Salsa', 'Descripción...'),
+('Electrónica', 'Descripción...'),
+('Vals', 'Descripción...');
+
+
+CREATE TABLE Canciones
+(
+  IdCancion int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  Titulo varchar(100) NOT NULL,
+  FKGenero int not null REFERENCES GeneroCanciones(IdGeneroPelicula),
+  DuracionMinutos int,
+  Cantautores varchar(500) DEFAULT '',
+  UrlImgPortada varchar(1000),
+  UrlCancion varchar(1000),
+  UrlCancionPrueba varchar(1000)
+);
+
+INSERT INTO Canciones(Titulo, FKGenero,
+DuracionMinutos, Cantautores, UrlImgPortada, UrlCancion, UrlCancionPrueba)
+VALUES('Es Épico', 2, 6, 'Cancerbero', '../../Musica/Canserbero/Canserbero.jpg', 
+'../../Musica/Canserbero/Es Épico.mp3', '../../Musica/Canserbero/Es Épico T.mp3');
+
+INSERT INTO Canciones(Titulo, FKGenero,
+DuracionMinutos, Cantautores, UrlImgPortada, UrlCancion, UrlCancionPrueba)
+VALUES('Mundo De Piedra', 2, 6, 'Cancerbero', '../../Musica/Canserbero/Canserbero.jpg', 
+'../../Musica/Canserbero/Mundo De Piedra.mp3', '../../Musica/Canserbero/Mundo De Piedra T.mp3');
+
+INSERT INTO Canciones(Titulo, FKGenero,
+DuracionMinutos, Cantautores, UrlImgPortada, UrlCancion, UrlCancionPrueba)
+VALUES('Pensando En Ti', 2, 6, 'Cancerbero', '../../Musica/Canserbero/Canserbero.jpg', 
+'../../Musica/Canserbero/Pensando En Ti.mp3', '../../Musica/Canserbero/Pensando En Ti T.mp3');

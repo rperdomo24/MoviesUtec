@@ -84,7 +84,8 @@
 
                   </ul>
             </li>           
-            <li><a href="..\..\PHP\Registro\Login.php">Cerrar Sesion</a></li>            
+            <li><a href="..\Musica\Inicio.php">Música</a></li>            
+            <li><a href="..\Registro\Login.php">Cerrar Sesion</a></li>            
             <li><h4><b>Hola <?php echo $nom;?>!<b> ¿Qué deseas ver hoy?</h4></li>
           </ul>
         </div>

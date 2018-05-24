@@ -13,14 +13,28 @@ function EvaluarTiempoVideo(){
     var vid = document.getElementById("idPelicula");
     if(vid){
         var PorcentajeVer = 1;
-        var MaximoSegundosVer = vid.duration * (PorcentajeVer / 100);console.log("Pausa 1");
+        var MaximoSegundosVer = vid.duration * (PorcentajeVer / 100);
         vid.ontimeupdate = function() {
-            console.log("Pausa 2");
             if(vid.currentTime > MaximoSegundosVer){
                 vid.pause();
-                console.log("Pausa 3");
                 $("img#PagaPro").show();
                 $("div#cntPelicula").empty();
+            }
+        }
+    }
+}
+
+// Evalua el tiempo a reproducir
+function EvaluarTiempoCancion(idCancion){
+    var aud = document.getElementById(idCancion);
+    if(aud){
+        var PorcentajeRepro = 10;
+        var MaximoSegundosRepro = aud.duration * (PorcentajeRepro / 100);
+        aud.ontimeupdate = function() {
+            if(aud.currentTime > MaximoSegundosRepro){
+                aud.pause();
+                $("#PagaPro-" + idCancion).show();
+                $("div#cnt-" + idCancion).empty();
             }
         }
     }
