@@ -48,6 +48,15 @@ SESSION_START();
     <link href="..\..\Vendor\alertify\css\alertify.min.css" rel="stylesheet">
     <link href="..\..\Vendor\alertify\css\alertify.rtl.min.css" rel="stylesheet">
     <link href="..\..\Vendor\alertify\css\themes\default.min.css" rel="stylesheet">
+    <STYLE TYPE="text/css" MEDIA=screen>
+.modal-backdrop{
+ position: relative; 
+}
+body { margin-top:20px; }
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+</STYLE>
   </head>
 
   <body>
@@ -75,9 +84,13 @@ SESSION_START();
 					</thead>
 					<tbody>
   <?php
+  $id ="";
+  $total ="";
         $_Planes = getSQLResultSet($connect, $QueryPlanes);
         while($Planes = mysqli_fetch_row($_Planes))
         {    
+          $id .= $Planes[0];
+          $total .=$Planes[2];
           echo '<tr>';
           echo '<td data-th="Product">';
           echo '<div class="row">';
@@ -104,10 +117,88 @@ SESSION_START();
 						<tr>
 							<td><a href="../ClientesGratis/Principal.php" class="btn btn-warning"><i class="fa fa-angle-left"></i> Cancelar</a></td>
 							<td colspan="2" class="hidden-xs"></td>						
-							<td><a href="Carrito.php?idCatalogoPlanes=".$Planes[0]."" class="btn btn-success btn-block">Comprar<i class="fa fa-angle-right"></i></a></td>
+							<td><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Comprar</button></td>
 						</tr>
 					</tfoot>
 				</table>
+        
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Pagar con tarjeta de credito</h4>
+      </div>
+      <div class="modal-body">
+      
+      <input type="hidden" id="Id_Producto" value="<?php echo $id ?>">
+       
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Metodo de pago
+                    </h3>
+                    
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            Numero de tarjeta</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="cardNumber" placeholder="Validar numero de tarjeta"
+                                required autofocus />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="expityMonth">
+                                    Fecha de expiracion</label>
+                                    
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityMonth" placeholder="MM" required />
+                                </div>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityYear" placeholder="YY" required /></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 col-md-5 pull-right">
+                            <div class="form-group">
+                                <label for="cvCode">
+                                    CV CODE</label>
+                                <input type="password" class="form-control" id="cvCode" placeholder="CV" required />
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span><?php echo $total?></span> Precio final</a>
+                </li>
+            </ul>
+            <br/>
+            <a href="#" class="btn btn-success btn-lg btn-block" role="button">Finalizar compra</a>
+        </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+
+
 </div>
 </div>
 
