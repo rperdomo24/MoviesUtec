@@ -7,9 +7,13 @@ SESSION_START();
         header("Location: ..\Registro\Login.php");
     } else {
         $nom = $_SESSION['Usuario'];
+        $email = $_SESSION['CorreoElectronico'];
+        $Nombre = $_SESSION['Nombres'];
     }
     
     $PeliculaId = $_GET["Pelicula"];
+
+    $QueryComentario = "SELECT post_id, fecha, name, email, comentarios from comentarios where IdPelicula =". $PeliculaId .";";
 
     $QueryPelicula = "SELECT IdPelicula, " .
                     "Titulo, " .
@@ -100,6 +104,64 @@ SESSION_START();
         }
 
         ?>
+
+
+
+<br>
+<div class="col-md-12 clear"><hr><h3>Escribe tu comentario</h3>
+<input type="hidden" id="Nombres" value="<?php echo $nom ?>"/>
+<input type="hidden" id="email" value="<?php echo $email ?>"/>
+<input type="hidden" id="PeliculaId" value="<?php echo $PeliculaId ?>"/>
+
+            </div>
+           <div class="col-md-12">
+           			<div class="container-fluid well span8">
+           
+            <div class="panel panel-default">
+                <div class="panel-body">  
+                        <textarea class="form-control counted" name="message"  id="message" placeholder="Digita tu comentario" rows="5" style="margin-bottom:10px;"></textarea>
+                        <h6 class="pull-right" id="counter">320 caracteres</h6>
+                        <button class="btn btn-info" id="Comentar" type="submit" onclick="Comentar();">Comentar</button>                    
+                </div>
+            </div>
+        </div>
+	</div>	
+ </div>	
+
+<br>
+<h1>Comentarios </h1>
+<div class="col-lg-12"> 
+
+  <?php
+        $_Comentarios = getRawSQLResultSet($connect, $QueryComentario);
+        while($Comentario = mysqli_fetch_row($_Comentarios))
+        {    
+         
+            echo '<br>';
+            echo '<input type="hidden" id="Comentario" value="'. $Comentario[0] .'"/>';
+            echo '<div class="row clear"><hr>';
+            echo '<div class="col-md-2 col-md-offset-1" >';
+            echo '<img src="https://cdn.icon-icons.com/icons2/1097/PNG/512/1485477097-avatar_78580.png" width="100" height="100" class="img-circle">';
+            echo '</div>';
+
+            echo '<div class="col-md-8 ">';
+            echo '<h3>'. $Comentario[2] .'</h3>';
+            echo '<h4>'. $Comentario[3] .'</h4>';
+            echo '<small><h5>'. $Comentario[1] .'</h5></small>';
+            echo  $Comentario[4] ;
+            echo '</div>';
+
+
+            echo '</div>';
+            echo '<br>';
+
+        }
+    ?>
+
+</div>
+
+
+
         <br>
         <br>
         <div class="col-lg-12" style="margin-top:100px">
@@ -132,3 +194,49 @@ SESSION_START();
 </script>
 </body>
 </html>
+<script>
+
+
+function Comentar(){
+  var message = $("#message").val();
+  var nombre = $("#Nombres").val();
+  var email = $("#email").val();
+  var PeliculaId = $("#PeliculaId").val();
+  console.log(PeliculaId);
+
+   if(!$.isEmptyObject(message)){
+            $('#cargando').show();
+               $.ajax({
+                 method: "GET",
+                 url: "../Database/Comentarios.php",
+                 data: { 
+                    message: message,
+                    nombre: nombre,
+                    email: email,
+                    PeliculaId:PeliculaId
+                      }
+               })
+                 .done(function( msg ) {
+                    $('#cargando').hide();
+                   data= JSON.parse(msg);
+                     if(data.Result == 1){
+                        alertify.success('Comentario Agregado Correctamente');
+                        setTimeout("location.href='location.reload();'",1000);
+                     }
+
+                 })
+                 .fail(function (msg) {
+                    $('#cargando').hide();
+                alert( "error: " + msg );
+                });
+            
+         
+       
+     
+    }else{
+  alertify.error('Digite correctamente un Comentario');
+    }
+  
+}
+
+</script>
