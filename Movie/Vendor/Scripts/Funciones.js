@@ -28,13 +28,17 @@ function EvaluarTiempoVideo(){
 function EvaluarTiempoCancion(idCancion){
     var aud = document.getElementById(idCancion);
     if(aud){
-        var PorcentajeRepro = 10;
-        var MaximoSegundosRepro = aud.duration * (PorcentajeRepro / 100);
+        var PorcentajeRepro = 15;
         aud.ontimeupdate = function() {
-            if(aud.currentTime > MaximoSegundosRepro){
-                aud.pause();
-                $("#PagaPro-" + idCancion).show();
-                $("div#cnt-" + idCancion).empty();
+            if(!aud.duration){
+                EvaluarTiempoCancion(idCancion);
+            }else{
+                var MaximoSegundosRepro = aud.duration * (PorcentajeRepro / 100);
+                if(aud.currentTime > MaximoSegundosRepro){
+                    aud.pause();
+                    $("#PagaPro-" + idCancion).show();
+                    $("div#cnt-" + idCancion).empty();
+                }
             }
         }
     }

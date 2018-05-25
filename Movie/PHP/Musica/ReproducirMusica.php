@@ -63,9 +63,9 @@ include ("../Database/conexion.php");
             echo '<img src="../../IMG/Paga.jpg" width="100px" />';
             echo '<a href="../Pago/Planes.php">Hazte Premium</a> para continuar escuchando tu música favorita sin restricciones!';
             echo '</div>';
-            echo '<div id="cnt-aud-' . $Musica[0] . '">';
-                echo '<audio src="' . $Musica[7] . '" id="aud-' . $Musica[0] . '" controls></audio>';
-            echo '</div>';
+                echo '<div id="cnt-aud-' . $Musica[0] . '">';
+                    echo '<audio src="' . $Musica[7] . '" id="aud-' . $Musica[0] . '" controls></audio>';
+                echo '</div>';
             echo '</div>';
             echo '<br />';
             echo '<br />';
@@ -73,7 +73,7 @@ include ("../Database/conexion.php");
             echo '';
 
             echo '<script>';
-            echo '$(function(){';
+            echo '$(window).ready(function(){';
             echo '    $("#PagaPro-aud-' . $Musica[0] .'").hide();';
             if($EsPro == 0){
                 echo 'EvaluarTiempoCancion("aud-'.$Musica[0].'");';
